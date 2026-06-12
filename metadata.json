@@ -1,0 +1,6 @@
+{
+  "name": "DREWMAX Website",
+  "description": "Strona internetowa producenta szczotek drewnianych DREWMAX",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

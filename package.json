@@ -1,0 +1,14 @@
+{
+  "name": "drewmax-website",
+  "version": "2.0.0",
+  "type": "module",
+  "description": "DREWMAX static website server",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo 'No build step needed'"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
