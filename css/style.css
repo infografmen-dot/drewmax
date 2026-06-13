@@ -2919,42 +2919,64 @@ textarea.form-control {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  /* Header */
   .header-wrapper {
-    height: 70px;
-    gap: 8px;
+    height: 64px;
+    gap: 0;
     padding: 0;
+    justify-content: space-between;
   }
 
+  /* Logo */
   .logo {
-    height: 52px;
-    max-width: 140px;
+    height: 44px;
+    width: auto;
+    max-width: 130px;
     object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  /* Nav-actions: lang + hamburger */
+  .nav-actions {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .header-phone {
+    display: none !important;
+  }
+
+  .nav-actions .btn {
+    display: none !important;
   }
 
   .lang-switcher {
-    margin-right: 4px;
+    margin-right: 0;
     gap: 2px;
   }
 
   .lang-link {
-    padding: 4px 7px;
+    padding: 5px 8px;
     font-size: 0.8rem;
   }
 
   .mobile-toggle {
+    display: block !important;
     flex-shrink: 0;
+    padding: 6px;
+    z-index: 1001;
   }
 
   .hero-buttons {
     display: flex;
     justify-content: center;
   }
-  .header-phone {
-    font-size: 0.85rem;
-  }
 }
+
 @media (max-width: 480px) {
-  .header-phone {
-    display: none;
+  .logo {
+    height: 38px;
+    max-width: 110px;
   }
 }
