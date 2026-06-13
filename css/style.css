@@ -1930,14 +1930,14 @@ footer {
   }
 
   .logo {
-    height: 45px;
+    height: 100px;
   }
 
   .nav-menu {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 70px;
+    top: 120px;
     left: 0;
     width: 100%;
     background: rgba(26, 26, 26, 0.95);
@@ -1982,7 +1982,7 @@ footer {
   }
 
   .hero {
-    min-height: 500px;
+    min-height: 100vh;
   }
 
   .hero-text h1 {
@@ -3036,7 +3036,7 @@ textarea.form-control {
   }
 
   .logo {
-    height: 90px;
+    height: 135px;
   }
 
   .hero-buttons {
