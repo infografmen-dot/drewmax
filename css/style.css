@@ -562,6 +562,20 @@ header.scrolled .mobile-toggle span {
   flex-wrap: wrap;
 }
 
+.hero-quote {
+  position: absolute;
+  bottom: 160px;
+  right: calc(38% - 200px);
+  max-width: 400px;
+  z-index: 5;
+  color: rgba(255, 255, 255, 0.85); /* same as hero-text p */
+  font-size: 1rem; /* same as hero-text p */
+  font-style: italic;
+  font-weight: 400;
+  text-align: right;
+  line-height: 1.6;
+}
+
 .hero-image {
   display: none;
 }
@@ -1706,6 +1720,15 @@ footer {
   margin-bottom: 20px;
 }
 
+.footer-logo {
+  height: 120px;
+  width: auto;
+  margin-top: -35px;
+  margin-left: -22px;
+  margin-bottom: -15px;
+  display: block;
+}
+
 .footer-about h3 .highlight {
   color: var(--primary);
 }
@@ -1891,6 +1914,13 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .hero-quote {
+    bottom: 20px;
+    right: 5%;
+    max-width: 90%;
+    font-size: 0.9rem;
+    text-align: center;
+  }
   .section {
     padding: 60px 0;
   }
