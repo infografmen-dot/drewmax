@@ -1921,6 +1921,10 @@ footer {
     font-size: 0.9rem;
     text-align: center;
   }
+
+  .hero-bg img {
+    object-position: center center;
+  }
   .section {
     padding: 60px 0;
   }
@@ -1930,7 +1934,7 @@ footer {
   }
 
   .logo {
-    height: 100px;
+    height: 200px;
   }
 
   .nav-menu {
