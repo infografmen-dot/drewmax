@@ -1816,14 +1816,16 @@ footer {
   }
 
   .logo {
-    height: 100px;
+    height: 52px;
+    max-width: 140px;
+    object-fit: contain;
   }
 
   .nav-menu {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 120px;
+    top: 70px;
     left: 0;
     width: 100%;
     background: rgba(26, 26, 26, 0.95);
@@ -2918,12 +2920,29 @@ textarea.form-control {
     padding-right: 20px;
   }
   .header-wrapper {
-    height: 120px;
-    gap: 5px;
+    height: 70px;
+    gap: 8px;
+    padding: 0;
   }
 
   .logo {
-    height: 135px;
+    height: 52px;
+    max-width: 140px;
+    object-fit: contain;
+  }
+
+  .lang-switcher {
+    margin-right: 4px;
+    gap: 2px;
+  }
+
+  .lang-link {
+    padding: 4px 7px;
+    font-size: 0.8rem;
+  }
+
+  .mobile-toggle {
+    flex-shrink: 0;
   }
 
   .hero-buttons {
