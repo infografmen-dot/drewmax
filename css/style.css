@@ -1816,7 +1816,7 @@ footer {
   }
 
   .logo {
-    height: 200px;
+    height: 100px;
   }
 
   .nav-menu {
@@ -2919,7 +2919,7 @@ textarea.form-control {
   }
   .header-wrapper {
     height: 120px;
-    gap: 15px;
+    gap: 5px;
   }
 
   .logo {
