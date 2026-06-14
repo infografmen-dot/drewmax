@@ -215,6 +215,16 @@ header .container {
   max-width: 1500px;
 }
 
+header nav {
+  margin: 0 auto;
+}
+
+@media (max-width: 1440px) and (min-width: 992px) {
+  header .container {
+    max-width: 1240px !important;
+  }
+}
+
 .header-wrapper {
   display: flex;
   align-items: center;
@@ -222,7 +232,6 @@ header .container {
   height: 110px;
   padding: 10px 0;
   gap: 30px;
-  overflow: visible;
 }
 
 .logo {
@@ -257,6 +266,14 @@ header.scrolled .logo-black {
   flex-wrap: nowrap;
   margin-left: auto;
   margin-right: 60px;
+}
+
+@media (max-width: 1440px) and (min-width: 992px) {
+  .nav-menu {
+    gap: 20px !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
 }
 
 .nav-link {
@@ -531,6 +548,7 @@ header.scrolled .mobile-toggle span {
   padding-left: 0;
   margin-left: 0;
   margin-right: auto;
+  margin-top: 50px;
 }
 
 .hero-text h1 {
@@ -1479,7 +1497,6 @@ header.scrolled .mobile-toggle span {
 }
 
 footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2) {
-  text-align: left;
   font-weight: normal;
 }
 
@@ -1817,9 +1834,7 @@ footer {
   }
 
   .logo {
-    height: 52px;
-    max-width: 140px;
-    object-fit: contain;
+    height: 50px;
   }
 
   .nav-menu {
@@ -2920,136 +2935,16 @@ textarea.form-control {
     padding-left: 20px;
     padding-right: 20px;
   }
-
-  /* Header */
-  .header-wrapper {
-    height: 64px;
-    gap: 0;
-    padding: 0;
-    justify-content: space-between;
-  }
-
-  /* Logo */
-  .logo {
-    height: 44px;
-    width: auto;
-    max-width: 130px;
-    object-fit: contain;
-    flex-shrink: 0;
-  }
-
-  /* Nav-actions: lang + hamburger */
-  .nav-actions {
-    gap: 6px;
-    flex-shrink: 0;
-  }
-
-  .header-phone {
-    display: none !important;
-  }
-
-  .nav-actions .btn {
-    display: none !important;
-  }
-
-  .lang-switcher {
-    margin-right: 0;
-    gap: 2px;
-  }
-
-  .lang-link {
-    padding: 5px 8px;
-    font-size: 0.8rem;
-  }
-
-  .mobile-toggle {
-    display: block !important;
-    flex-shrink: 0;
-    padding: 6px;
-    z-index: 1001;
-  }
-
   .hero-buttons {
     display: flex;
     justify-content: center;
   }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    height: 38px;
-    max-width: 110px;
-  }
-}
-
-/* ============================================================
-   MOBILE HEADER FIX - logo + lang + hamburger w jednej linii
-   ============================================================ */
-@media (max-width: 768px) {
-  header .container {
-    padding: 0 16px;
-    overflow: visible;
-  }
-
-  .header-wrapper {
-    height: 60px !important;
-    padding: 0 !important;
-    gap: 8px !important;
-    overflow: visible !important;
-    flex-wrap: nowrap !important;
-    width: 100% !important;
-  }
-
-  .logo {
-    height: 42px !important;
-    width: auto !important;
-    max-width: 120px !important;
-    object-fit: contain !important;
-    flex-shrink: 0 !important;
-  }
-
-  .nav-menu {
-    top: 60px !important;
-  }
-
-  .nav-actions {
-    display: flex !important;
-    align-items: center !important;
-    gap: 4px !important;
-    flex-shrink: 0 !important;
-    flex-wrap: nowrap !important;
-    margin-left: auto !important;
-  }
-
   .header-phone {
-    display: none !important;
+    font-size: 0.85rem;
   }
-
-  .nav-actions > a.btn,
-  .nav-actions .btn-primary,
-  .nav-actions .btn-sm {
-    display: none !important;
-  }
-
-  .lang-switcher {
-    display: flex !important;
-    align-items: center !important;
-    margin-right: 0 !important;
-    gap: 2px !important;
-    flex-shrink: 0 !important;
-  }
-
-  .lang-link {
-    padding: 4px 6px !important;
-    font-size: 0.78rem !important;
-  }
-
-  .mobile-toggle {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    flex-shrink: 0 !important;
-    padding: 6px !important;
-    z-index: 1001 !important;
+}
+@media (max-width: 480px) {
+  .header-phone {
+    display: none;
   }
 }
