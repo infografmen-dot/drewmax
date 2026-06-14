@@ -2950,6 +2950,12 @@ textarea.form-control {
     margin: 0 auto;
     text-align: center;
   }
+  .hero-text p {
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  }
   .nav-actions .btn {
     display: none;
   }
