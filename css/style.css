@@ -61,6 +61,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -70,6 +72,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* ==========================================================================
@@ -241,19 +245,23 @@ header nav {
   flex-shrink: 0;
 }
 
-header:not(.scrolled) .logo-black {
+.mobile-logo {
   display: none !important;
 }
 
-header:not(.scrolled) .logo-white {
+header:not(.scrolled) .desktop-logo.logo-black {
+  display: none !important;
+}
+
+header:not(.scrolled) .desktop-logo.logo-white {
   display: block !important;
 }
 
-header.scrolled .logo-white {
+header.scrolled .desktop-logo.logo-white {
   display: none !important;
 }
 
-header.scrolled .logo-black {
+header.scrolled .desktop-logo.logo-black {
   display: block !important;
 }
 
@@ -1813,7 +1821,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .hero-quote {
     bottom: 20px;
     right: 5%;
@@ -1834,7 +1842,30 @@ footer {
   }
 
   .logo {
-    height: 50px;
+    height: 55px;
+  }
+
+  /* Robust fix: ensure all versions of desktop logo are hidden on tablet and mobile */
+  .desktop-logo,
+  header:not(.scrolled) .desktop-logo.logo-white,
+  header:not(.scrolled) .desktop-logo.logo-black,
+  header.scrolled .desktop-logo.logo-white,
+  header.scrolled .desktop-logo.logo-black {
+    display: none !important;
+  }
+
+  header:not(.scrolled) .logo-white.mobile-logo {
+    display: block !important;
+  }
+  header:not(.scrolled) .logo-black.mobile-logo {
+    display: none !important;
+  }
+
+  header.scrolled .logo-white.mobile-logo {
+    display: none !important;
+  }
+  header.scrolled .logo-black.mobile-logo {
+    display: block !important;
   }
 
   .nav-menu {

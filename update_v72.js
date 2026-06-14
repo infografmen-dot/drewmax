@@ -8,8 +8,8 @@ const files = [
 files.forEach(f => {
   if (fs.existsSync(f)) {
     let content = fs.readFileSync(f, 'utf8');
-    content = content.replace(/v=68/g, 'v=69');
+    content = content.replace(/v=71/g, 'v=72');
     fs.writeFileSync(f, content, 'utf8');
   }
 });
-console.log('Updated v=69 in all HTML files');
+console.log('Updated v=72 in all HTML files');
