@@ -2076,7 +2076,7 @@ footer {
 }
 .catalog-sidebar-sticky {
   position: sticky;
-  top: 130px;
+  top: 140px;
 }
 .catalog-main {
   flex-grow: 1;
@@ -2172,6 +2172,9 @@ footer {
   display: flex;
   gap: 20px;
   align-items: center;
+  position: sticky;
+  top: 115px;
+  z-index: 100;
 }
 .search-input-group {
   position: relative;
@@ -2935,7 +2938,7 @@ textarea.form-control {
   }
 }
 
-/* Cache buster v=39 */
+/* Cache buster v=84 */
 
 /* Responsive 2-col inline replacements */
 .responsive-grid-2col {
