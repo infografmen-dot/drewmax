@@ -2069,6 +2069,7 @@ footer {
   gap: 40px;
   margin-top: 40px;
   position: relative;
+  align-items: flex-start;
 }
 .catalog-sidebar {
   width: 320px;
@@ -2076,7 +2077,7 @@ footer {
 }
 .catalog-sidebar-sticky {
   position: sticky;
-  top: 140px;
+  top: 200px;
 }
 .catalog-main {
   flex-grow: 1;
@@ -2163,7 +2164,7 @@ footer {
 
 /* Search bar styling */
 .catalog-search-wrapper {
-  background: var(--white);
+  background: var(--bg-light);
   border-radius: var(--radius-lg);
   padding: 24px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
@@ -2173,8 +2174,8 @@ footer {
   gap: 20px;
   align-items: center;
   position: sticky;
-  top: 115px;
-  z-index: 100;
+  top: 110px;
+  z-index: 900;
 }
 .search-input-group {
   position: relative;
