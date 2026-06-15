@@ -138,33 +138,33 @@
             <div class="form-grid">
               <div class="form-group-item">
                 <label for="fullName">Full Name *</label>
-                <input type="text" id="fullName" required placeholder="John Doe">
+                <input type="text" id="fullName" name="name" required placeholder="John Doe">
               </div>
               <div class="form-group-item">
                 <label for="companyName">Company Name</label>
-                <input type="text" id="companyName" placeholder="Acme Ltd.">
+                <input type="text" id="companyName" name="company" placeholder="Acme Ltd.">
               </div>
             </div>
 
             <div class="form-grid">
               <div class="form-group-item">
                 <label for="contactEmail">Email Address *</label>
-                <input type="email" id="contactEmail" required placeholder="john@acme.com">
+                <input type="email" id="contactEmail" name="email" required placeholder="john@acme.com">
               </div>
               <div class="form-group-item">
                 <label for="contactPhone">Phone Number *</label>
-                <input type="tel" id="contactPhone" required placeholder="+48 123 456 789">
+                <input type="tel" id="contactPhone" name="phone" required placeholder="+48 123 456 789">
               </div>
             </div>
 
             <div class="form-group-item" style="margin-top: 20px;">
               <label for="formSubject">Subject *</label>
-              <input type="text" id="formSubject" required placeholder="Private Label catalog order query">
+              <input type="text" id="formSubject" name="subject" required placeholder="Private Label catalog order query">
             </div>
 
             <div class="form-group-item" style="margin-top: 20px;">
               <label for="formMessage">Message *</label>
-              <textarea id="formMessage" required rows="6" placeholder="Please describe your requested brush parameters, dimensions, required quantities, and branding details..."></textarea>
+              <textarea id="formMessage" name="message" required rows="6" placeholder="Please describe your requested brush parameters, dimensions, required quantities, and branding details..."></textarea>
             </div>
 
             <div style="margin-top: 25px;">
@@ -181,11 +181,13 @@
             <h4 style="font-weight: 800; margin-bottom: 5px;">Thank You!</h4>
             <p style="font-size: 0.9rem;">Your message has been received securely. An expert manager is reviewing your files and will contact you directly.</p>
           </div>
+
+          <div id="formErrorStatus" style="display: none; background: #fef2f2; border: 1px solid #ef4444; color: #991b1b; padding: 20px; border-radius: var(--radius-md); text-align: center; margin-top: 25px;">
+            <p style="font-size: 0.9rem;">Something went wrong. Please try again or contact us directly at <a href="mailto:info@drewmax.pro">info@drewmax.pro</a></p>
+          </div>
         </div>
 
       </div>
-
-
     </div>
   </section>
 
@@ -285,7 +287,6 @@
     </div>
   </footer>
 
-  <!-- DYNAMIC PRODUCT REFERRAL INJECTOR -->
   <script>
     // Mobile menu toggle
     const mobileToggle = document.getElementById('mobileToggle');
@@ -331,18 +332,33 @@
     // Form submit controller
     const contactForm = document.getElementById('contactForm');
     const successStatus = document.getElementById('formSuccessStatus');
+    const errorStatus = document.getElementById('formErrorStatus');
 
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
-      // Simulate API submit nicely
+
+      const formData = new FormData(contactForm);
+
       contactForm.style.opacity = '0.3';
       contactForm.style.pointerEvents = 'none';
 
-      setTimeout(() => {
-        contactForm.style.display = 'none';
-        successStatus.style.display = 'block';
-      }, 800);
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (response.ok) {
+          contactForm.style.display = 'none';
+          successStatus.style.display = 'block';
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        contactForm.style.opacity = '1';
+        contactForm.style.pointerEvents = 'auto';
+        errorStatus.style.display = 'block';
+      }
     });
   </script>
 

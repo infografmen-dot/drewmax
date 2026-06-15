@@ -138,33 +138,33 @@
             <div class="form-grid">
               <div class="form-group-item">
                 <label for="fullName">Imię i Nazwisko *</label>
-                <input type="text" id="fullName" required placeholder="Jan Kowalski">
+                <input type="text" id="fullName" name="name" required placeholder="Jan Kowalski">
               </div>
               <div class="form-group-item">
                 <label for="companyName">Nazwa firmy</label>
-                <input type="text" id="companyName" placeholder="Firma Sp. z o.o.">
+                <input type="text" id="companyName" name="company" placeholder="Firma Sp. z o.o.">
               </div>
             </div>
 
             <div class="form-grid">
               <div class="form-group-item">
                 <label for="contactEmail">Adres Email *</label>
-                <input type="email" id="contactEmail" required placeholder="jan@nazwafirmy.pl">
+                <input type="email" id="contactEmail" name="email" required placeholder="jan@nazwafirmy.pl">
               </div>
               <div class="form-group-item">
                 <label for="contactPhone">Numer telefonu *</label>
-                <input type="tel" id="contactPhone" required placeholder="+48 600 100 200">
+                <input type="tel" id="contactPhone" name="phone" required placeholder="+48 600 100 200">
               </div>
             </div>
 
             <div class="form-group-item" style="margin-top: 20px;">
               <label for="formSubject">Temat wiadomości *</label>
-              <input type="text" id="formSubject" required placeholder="Zapytanie o wycenę zamówienia">
+              <input type="text" id="formSubject" name="subject" required placeholder="Zapytanie o wycenę zamówienia">
             </div>
 
             <div class="form-group-item" style="margin-top: 20px;">
               <label for="formMessage">Treść zapytania *</label>
-              <textarea id="formMessage" required rows="6" placeholder="Opisz parametry szczotek, wymagane ilości, branding..."></textarea>
+              <textarea id="formMessage" name="message" required rows="6" placeholder="Opisz parametry szczotek, wymagane ilości, branding..."></textarea>
             </div>
 
             <div style="margin-top: 25px;">
@@ -181,11 +181,13 @@
             <h4 style="font-weight: 800; margin-bottom: 5px;">Wiadomość Wysłana!</h4>
             <p style="font-size: 0.9rem;">Dziękujemy. Twoje zapytanie zostało zarejestrowane w naszym systemie. Doradca handlowy przygotuje dokładne kalkulacje i skontaktuje się telefonicznie lub mailowo.</p>
           </div>
+
+          <div id="formErrorStatus" style="display: none; background: #fef2f2; border: 1px solid #ef4444; color: #991b1b; padding: 20px; border-radius: var(--radius-md); text-align: center; margin-top: 25px;">
+            <p style="font-size: 0.9rem;">Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na <a href="mailto:info@drewmax.pro">info@drewmax.pro</a></p>
+          </div>
         </div>
 
       </div>
-
-
     </div>
   </section>
 
@@ -285,7 +287,6 @@
     </div>
   </footer>
 
-  <!-- DYNAMIC PRODUCT REFERRAL INJECTOR -->
   <script>
     // Mobile menu toggle
     const mobileToggle = document.getElementById('mobileToggle');
@@ -331,18 +332,33 @@
     // Form submit controller
     const contactForm = document.getElementById('contactForm');
     const successStatus = document.getElementById('formSuccessStatus');
+    const errorStatus = document.getElementById('formErrorStatus');
 
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
-      // Simulate API submit nicely
+
+      const formData = new FormData(contactForm);
+
       contactForm.style.opacity = '0.3';
       contactForm.style.pointerEvents = 'none';
 
-      setTimeout(() => {
-        contactForm.style.display = 'none';
-        successStatus.style.display = 'block';
-      }, 800);
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (response.ok) {
+          contactForm.style.display = 'none';
+          successStatus.style.display = 'block';
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        contactForm.style.opacity = '1';
+        contactForm.style.pointerEvents = 'auto';
+        errorStatus.style.display = 'block';
+      }
     });
   </script>
 
