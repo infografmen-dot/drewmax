@@ -683,8 +683,9 @@ header.scrolled .mobile-toggle span {
 .feature-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 20px;
+  min-height: 110px;
 }
 
 .feature-header h3 {
@@ -1765,29 +1766,25 @@ footer {
   border-top: 1px solid var(--gray-100);
 }
 
-.eu-grid {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
 .eu-logos {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
 }
 
 .eu-logo {
-  width: 140px;
-  height: 85px;
+  width: 100%;
+  max-width: 280px;
+  height: 170px;
   background-color: var(--white);
   border: 1px solid var(--gray-300);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 16px;
+  margin: 0 auto;
   font-size: 0.65rem;
   font-weight: 600;
   text-align: center;
@@ -1795,6 +1792,20 @@ footer {
   text-transform: uppercase;
   line-height: 1.2;
   transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+  .eu-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .eu-logos {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 }
 .eu-logo:hover {
   transform: translateY(-2px);
@@ -1963,10 +1974,6 @@ footer {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 40px;
-  }
-
-  .eu-grid {
-    grid-template-columns: 1fr;
   }
 
   .cta-banner {
