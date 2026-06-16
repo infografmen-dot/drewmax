@@ -2262,6 +2262,22 @@ footer {
   font-size: 0.95rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
+.product-table th:nth-child(1),
+.product-table td:nth-child(1) {
+  width: 22% !important;
+}
+.product-table th:nth-child(2),
+.product-table td:nth-child(2) {
+  width: 45% !important;
+}
+.product-table th:nth-child(3),
+.product-table td:nth-child(3) {
+  width: 18% !important;
+}
+.product-table th:nth-child(4),
+.product-table td:nth-child(4) {
+  width: 15% !important;
+}
 .product-table td {
   padding: 20px 24px;
   font-size: 0.98rem;
@@ -2284,6 +2300,7 @@ footer {
   border-radius: 6px;
   font-size: 0.85rem;
   display: inline-block;
+  white-space: nowrap;
 }
 .prod-name {
   font-weight: 700;
