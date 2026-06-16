@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kontakt z DREWMAX - producentem szczotek drewnianych w Pieniężnie. Zapytaj o zamówienia hurtowe, produkcję kontraktową lub Private Label.">
   <title>Kontakt | Producent Szczotek DREWMAX</title>
-  <link rel="stylesheet" href="../css/style.css?v=87">
+  <link rel="stylesheet" href="../css/style.css?v=94">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
@@ -62,22 +63,22 @@
       <img src="../images/product_01_wooden_cores.jpg" alt="Drewmax surowiec bukowy klocki">
     </div>
     <div class="container">
-      <div class="breadcrumbs">
+      <div class="breadcrumbs reveal-onload">
         <a href="index.html">Strona Główna</a>
         <span>&rarr;</span>
         <span style="color: var(--primary);">Dane kontaktowe i centrala</span>
       </div>
-      <h1 class="subpage-title">Siedziba i <span class="highlight">Kontakt</span></h1>
+      <h1 class="subpage-title reveal-onload delay-100">Siedziba i <span class="highlight">Kontakt</span></h1>
     </div>
   </section>
 
   <!-- CONTACT LAYOUT -->
   <section class="contact-section-split bg-light">
     <div class="container">
-      <div class="contact-grid-main">
+      <div class="contact-grid-main reveal-group">
         
         <!-- Column 1: Contact Details -->
-        <div class="contact-details-box">
+        <div class="contact-details-box reveal-onscroll">
           <span class="about-experience-badge">DANE I ADRES</span>
 
           <div class="contact-card-info" style="margin-top: 30px;">
@@ -129,7 +130,7 @@
         </div>
 
         <!-- Column 2: Advanced Contact Form -->
-        <div class="contact-form-container">
+        <div class="contact-form-container reveal-onscroll" style="transition-delay: 200ms;">
           <h3>Zapytanie Ofertowe</h3>
           <p style="color: var(--gray-700); font-size: 0.95rem; margin-bottom: 25px;">Wypełnij ten formularz, a nasz doradca odpowie w ciągu 4 godzin roboczych.</p>
           
@@ -359,6 +360,25 @@
         contactForm.style.pointerEvents = 'auto';
         errorStatus.style.display = 'block';
       }
+    });
+
+    // Premium Reveal on Scroll using Intersection Observer
+    document.addEventListener("DOMContentLoaded", function() {
+      const revealElements = document.querySelectorAll('.reveal-onscroll');
+      
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+      
+      revealElements.forEach(el => revealObserver.observe(el));
     });
   </script>
 

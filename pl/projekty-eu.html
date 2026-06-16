@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Projekty UE DREWMAX. Szczegóły dofinansowania przez Unię Europejską w ramach Regionalnego Programu Operacyjnego Województwa Warmińsko-Mazurskiego.">
   <title>Projekty Unijne | Producent Szczotek DREWMAX</title>
-  <link rel="stylesheet" href="../css/style.css?v=86">
+  <link rel="stylesheet" href="../css/style.css?v=94">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
@@ -62,12 +63,12 @@
       <img src="../images/product_04_brushes.jpg" alt="DREWMAX szczotki techniczne">
     </div>
     <div class="container">
-      <div class="breadcrumbs">
+      <div class="breadcrumbs reveal-onload">
         <a href="index.html">Strona Główna</a>
         <span>&rarr;</span>
         <span style="color: var(--primary);">Fundusze i Dotacje Europejskie</span>
       </div>
-      <h1 class="subpage-title">Projekty <span class="highlight">Unijne</span></h1>
+      <h1 class="subpage-title reveal-onload delay-100">Projekty <span class="highlight">Unijne</span></h1>
     </div>
   </section>
 
@@ -81,11 +82,11 @@
   <!-- EU LOGOS SECTION -->
   <section class="eu-section">
     <div class="container">
-      <div class="eu-logos">
-        <div class="eu-logo"><img src="../images/fundusze-europejskie-program-regionalny-1-1.png" alt="Fundusze Europejskie Program Regionalny"></div>
-        <div class="eu-logo"><img src="../images/rzeczpospolita-polska-1-1.png" alt="Rzeczpospolita Polska"></div>
-        <div class="eu-logo"><img src="../images/warmia-mazury-zdrowe-zycie-czysty-zysk-1-1.png" alt="Warmia i Mazury Zdrowe Życie Czysty Zysk"></div>
-        <div class="eu-logo"><img src="../images/europejski-fundusz-rozwoju-regionalnego-1-1.png" alt="Unia Europejska Europejski Fundusz Rozwoju Regionalnego"></div>
+      <div class="eu-logos reveal-group">
+        <div class="eu-logo reveal-onscroll"><img src="../images/fundusze-europejskie-program-regionalny-1-1.png" alt="Fundusze Europejskie Program Regionalny"></div>
+        <div class="eu-logo reveal-onscroll"><img src="../images/rzeczpospolita-polska-1-1.png" alt="Rzeczpospolita Polska"></div>
+        <div class="eu-logo reveal-onscroll"><img src="../images/warmia-mazury-zdrowe-zycie-czysty-zysk-1-1.png" alt="Warmia i Mazury Zdrowe Życie Czysty Zysk"></div>
+        <div class="eu-logo reveal-onscroll"><img src="../images/europejski-fundusz-rozwoju-regionalnego-1-1.png" alt="Unia Europejska Europejski Fundusz Rozwoju Regionalnego"></div>
       </div>
     </div>
   </section>
@@ -197,6 +198,25 @@
     }
     window.addEventListener('scroll', checkScroll);
     checkScroll();
+
+    // Premium Reveal on Scroll using Intersection Observer
+    document.addEventListener("DOMContentLoaded", function() {
+      const revealElements = document.querySelectorAll('.reveal-onscroll');
+      
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+      
+      revealElements.forEach(el => revealObserver.observe(el));
+    });
   </script>
 
 </body>

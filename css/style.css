@@ -3106,3 +3106,74 @@ textarea.form-control {
   }
 }
 
+/* --- Premium Micro-Animations System (Cetro-Style Slow Load) --- */
+
+/* Smooth cubic-bezier for highly luxurious feel (similar to easeOutExpo / easeOutQuart) */
+@keyframes microRevealFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Base class for elements animating on page load */
+.reveal-onload {
+  opacity: 0;
+  animation: microRevealFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Micro delays for staggered above-the-fold reveals */
+.delay-50 { animation-delay: 50ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+
+/* Base class for scroll-triggered reveal elements */
+.reveal-onscroll {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(4px);
+  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              filter 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity, filter;
+}
+
+/* Fired when class is appended via JS */
+.reveal-onscroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Automatic stagger animations for elements inside a flex or grid group */
+.reveal-group .reveal-onscroll:nth-child(1) { transition-delay: 50ms; }
+.reveal-group .reveal-onscroll:nth-child(2) { transition-delay: 150ms; }
+.reveal-group .reveal-onscroll:nth-child(3) { transition-delay: 250ms; }
+.reveal-group .reveal-onscroll:nth-child(4) { transition-delay: 350ms; }
+.reveal-group .reveal-onscroll:nth-child(5) { transition-delay: 450ms; }
+.reveal-group .reveal-onscroll:nth-child(6) { transition-delay: 550ms; }
+.reveal-group .reveal-onscroll:nth-child(7) { transition-delay: 650ms; }
+.reveal-group .reveal-onscroll:nth-child(8) { transition-delay: 750ms; }
+.reveal-group .reveal-onscroll:nth-child(9) { transition-delay: 850ms; }
+
+/* Hover effects enhancement to accompany reveal animations */
+.glow-on-hover {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glow-on-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(130, 180, 64, 0.12);
+}
+
+
