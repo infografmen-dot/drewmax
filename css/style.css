@@ -61,7 +61,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 
@@ -72,7 +72,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 
@@ -225,7 +225,7 @@ header nav {
 
 @media (max-width: 1440px) and (min-width: 992px) {
   header .container {
-    max-width: 1240px !important;
+    max-width: 1380px !important;
   }
 }
 
@@ -277,10 +277,43 @@ header.scrolled .desktop-logo.logo-black {
 }
 
 @media (max-width: 1440px) and (min-width: 992px) {
-  .nav-menu {
+  header .container {
+    max-width: 1420px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .logo {
+    height: 95px !important;
+  }
+  .header-wrapper {
     gap: 20px !important;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
+  }
+  .nav-menu {
+    gap: clamp(40px, 4.2vw, 65px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .nav-link {
+    font-size: 0.95rem !important;
+  }
+  .nav-actions {
+    gap: 15px !important;
+  }
+  .header-phone {
+    font-size: 0.9rem !important;
+    margin-right: 10px !important;
+  }
+  .lang-switcher {
+    margin-right: 10px !important;
+    gap: 6px !important;
+    font-size: 0.9rem !important;
+  }
+  .lang-link {
+    padding: 4px 8px !important;
+  }
+  .nav-actions .btn-sm {
+    padding: 10px 20px !important;
+    font-size: 0.9rem !important;
   }
 }
 
@@ -291,6 +324,7 @@ header.scrolled .desktop-logo.logo-black {
   position: relative;
   padding: 10px 0;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 header.scrolled .nav-link {
@@ -2078,7 +2112,7 @@ footer {
 }
 .catalog-sidebar-sticky {
   position: sticky;
-  top: 130px;
+  top: 250px;
 }
 .catalog-main {
   flex-grow: 1;
@@ -2213,7 +2247,7 @@ footer {
 /* Catalog Categories Group styling */
 .category-group {
   margin-bottom: 80px;
-  scroll-margin-top: 140px;
+  scroll-margin-top: 250px;
 }
 .category-group h2 {
   font-size: 2.22rem;
