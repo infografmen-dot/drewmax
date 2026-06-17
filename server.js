@@ -16,8 +16,14 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// Przekierowanie starych ścieżek /pl do głównego katalogu (nowej domyślnej wersji PL)
 app.get('/pl', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pl', 'index.html'));
+  res.redirect(301, '/');
+});
+
+app.get('/pl/:filename', (req, res) => {
+  const filename = req.params.filename;
+  res.redirect(301, `/${filename}`);
 });
 
 app.listen(port, '0.0.0.0', () => {
