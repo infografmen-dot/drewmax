@@ -2074,10 +2074,11 @@ footer {
 .catalog-sidebar {
   width: 320px;
   flex-shrink: 0;
+  align-self: stretch;
 }
 .catalog-sidebar-sticky {
   position: sticky;
-  top: 200px;
+  top: 130px;
 }
 .catalog-main {
   flex-grow: 1;
