@@ -16,7 +16,7 @@
     pl: {
       badgeTitle: "Ustawienia plików cookies",
       header: "Dostosuj preferencje dotyczące zgody",
-      description: "Używamy plików cookie (ciasteczek), aby ułatwić Ci korzystanie z naszej witryny DREWMAX oraz w celach analitycznych i funkcjonalnych. Możesz zaakceptować wszystkie pliki cookie, odrzucić te, które nie są niezbędne, lub dostosować swoje ustawienia poniżej. Więcej informacji znajdziesz w naszej <a href='/polityka-prywatnosci.html' class='cookie-link'>Polityce Prywatności</a>.",
+      description: "Używamy plików cookie (ciasteczek), aby ułatwić Ci korzystanie z naszej witryny DREWMAX oraz w celach analitycznych i funkcjonalnych. Możesz zaakceptować wszystkie pliki cookie, odrzucić te, które nie są niezbędne, lub dostosować swoje ustawienia poniżej. Więcej informacji znajdziesz w naszej <a href='/polityka-prywatnosci' class='cookie-link'>Polityce Prywatności</a>.",
       bannerText: "Nasza strona używa plików cookie do optymalizacji działania oraz analityki. Klikając „Akceptuj wszystkie”, wyrażasz zgodę na wszystkie technologie śledzenia. Możesz też dostosować swoje preferencje lub odrzucić opcjonalne pliki.",
       catNecessaryTitle: "Niezbędne",
       catNecessaryDesc: "Niezbędne pliki cookie są kluczowe dla podstawowych funkcji witryny. Bez nich nasza strona nie mogłaby poprawnie wyświetlać katalogów produktów, zapytań ofertowych ani innych ważnych funkcji technicznych. Nie przechowują one żadnych danych osobowych umożliwiających identyfikację osoby.",
@@ -36,7 +36,7 @@
     en: {
       badgeTitle: "Cookie Consent Settings",
       header: "Customize Consent Preferences",
-      description: "We use cookies to help you navigate efficiently and perform certain functions on our DREWMAX website, as well as for functional and analytical purposes. You can accept all cookies, reject non-essential ones, or customize your preferences below. Learn more in our <a href='/en/privacy-policy.html' class='cookie-link'>Privacy Policy</a>.",
+      description: "We use cookies to help you navigate efficiently and perform certain functions on our DREWMAX website, as well as for functional and analytical purposes. You can accept all cookies, reject non-essential ones, or customize your preferences below. Learn more in our <a href='/en/privacy-policy' class='cookie-link'>Privacy Policy</a>.",
       bannerText: "Our website uses cookies to optimize your experience and for analytical purposes. By clicking 'Accept All', you agree to all tracking technologies. You can also customize your preferences or reject optional cookies.",
       catNecessaryTitle: "Necessary",
       catNecessaryDesc: "Necessary cookies are crucial for the basic functions of the website. Without them, our site might not display product catalogs, secure B2B quote inquiries, or basic layout options correctly. They do not store any personally identifiable data.",
