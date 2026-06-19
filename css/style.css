@@ -2771,6 +2771,11 @@ textarea.form-control {
   .catalog-sidebar-sticky {
     position: static;
   }
+  .catalog-search-wrapper {
+    position: static !important;
+    top: auto !important;
+    z-index: auto !important;
+  }
   .catalog-nav-list {
     position: static;
     display: flex;
