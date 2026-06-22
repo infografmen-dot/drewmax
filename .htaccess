@@ -1,0 +1,21 @@
+# ----------------------------------------------------------------------
+# DREWMAX - Konfiguracja przyjaznych adresów URL (bez rozszerzenia .html)
+# ----------------------------------------------------------------------
+
+RewriteEngine On
+
+# 1. Przekierowanie z /nazwa.html na /nazwa (Status 301 - zachowanie SEO)
+# Unikamy pętli przekierowań i dbamy o brak duplikacji treści
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.html\  [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# 2. Ustawienie domyślnego pliku indeksu w folderach
+DirectoryIndex index.html
+
+# 3. Wewnętrzne serwowanie pliku .html przy zapytaniu bez rozszerzenia
+# Warunek: ścieżka nie jest fizycznym katalogiem
+RewriteCond %{REQUEST_FILENAME} !-d
+# Warunek: plik z rozszerzeniem .html fizycznie istnieje na serwerze
+RewriteCond %{REQUEST_FILENAME}\.html -f
+# Wewnętrzne przekierowanie (niewidoczne dla użytkownika w pasku adresu)
+RewriteRule ^(.*)$ $1.html [L]
