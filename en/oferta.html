@@ -133,7 +133,7 @@
           <div class="pdf-download-card">
             <h3>Full PDF Catalog</h3>
             <p>Download our complete catalog including detail technical drawings and full product assortment.</p>
-            <a href="#" class="btn btn-primary w-full" id="downloadPdfBtn">
+            <a href="/katalog.pdf" download="Drewmax_Catalog_2026.pdf" class="btn btn-primary w-full" id="downloadPdfBtn">
               Download PDF (4.2 MB)
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 18px; height: 18px; margin-left: 8px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
             </a>
@@ -1287,7 +1287,6 @@
     const downloadPdfBtn = document.getElementById('downloadPdfBtn');
     if (downloadPdfBtn) {
       downloadPdfBtn.addEventListener('click', (e) => {
-        e.preventDefault();
         const originalText = downloadPdfBtn.innerHTML;
         downloadPdfBtn.innerHTML = 'Download started...';
         downloadPdfBtn.style.backgroundColor = '#74A136';
